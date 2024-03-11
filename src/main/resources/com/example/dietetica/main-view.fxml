@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dietetica.controller.MainController">
+   <center>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: lightgrey;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Nombre del cliente:">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNombre" promptText="Introducir nombre">
+                     <tooltip>
+                        <Tooltip text="Campo para introducir el nombre del cliente" />
+                     </tooltip>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="260.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Sexo:">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="radioHombre" mnemonicParsing="false" selected="true" text="Hombre">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="genero" />
+                     </toggleGroup>
+                     <tooltip>
+                        <Tooltip text="Si seleccionas este botón se guardará como hombre" />
+                     </tooltip>
+                  </RadioButton>
+                  <RadioButton fx:id="radioMujer" mnemonicParsing="false" text="Mujer" toggleGroup="$genero">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Si seleccionas este botón se guardará como mujer" />
+                     </tooltip>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="320.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Peso:">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="spinnerPeso" editable="true">
+                     <tooltip>
+                        <Tooltip text="Introduce aquí el peso en Kilogramos" />
+                     </tooltip>
+                  </Spinner>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="380.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Edad:">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="spinnerEdad" editable="true">
+                     <tooltip>
+                        <Tooltip text="Introduce aquí el valor de la edad" />
+                     </tooltip>
+                  </Spinner>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="440.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Talla:">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="spinnerTalla" editable="true">
+                     <tooltip>
+                        <Tooltip text="Introduce aquí el valor de la altura" />
+                     </tooltip>
+                  </Spinner>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="494.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Tipo de actividad:">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboActividad" prefWidth="150.0">
+                     <tooltip>
+                        <Tooltip text="Selecciona el nivel de actividad del cliente" />
+                     </tooltip>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" layoutX="30.0" layoutY="514.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Observaciones:">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="txtObservaciones" prefHeight="200.0" prefWidth="200.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Introduce las observaciones del cliente" />
+                     </tooltip>
+                  </TextArea>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" spacing="50.0">
+               <children>
+                  <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#saveCliente" text="Guardar">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Presiona el botón para guardar al cliente" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="btnDescargar" mnemonicParsing="false" onAction="#getReport" text="Descargar">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Presiona el botón para descargar un pdf con todos los clientes" />
+                     </tooltip>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <top>
+      <Label text="Calculadora de Metabolismo Basal" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="15.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <bottom>
+      <Label fx:id="info" text="Aquí se mostrará el GER y el GET del cliente" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" top="15.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </bottom>
+</BorderPane>
